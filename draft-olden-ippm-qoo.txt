@@ -5,7 +5,7 @@
 IP Performance Measurement                                      M. Olden
 Internet-Draft                                              B. I. Teigen
 Intended status: Informational                                     Domos
-Expires: 22 July 2024                                    19 January 2024
+Expires: 11 August 2024                                  8 February 2024
 
 
                            Quality of Outcome
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 July 2024.
+   This Internet-Draft will expire on 11 August 2024.
 
 Copyright Notice
 
@@ -458,7 +458,7 @@ Table of Contents
 
    Volatile networks - in particular, mobile cellular networks - pose a
    challenge for network quality prediction, with the level of assurance
-   of the precition likely to decrease as session duration increases.
+   of the prediction likely to decrease as session duration increases.
    Historic network conditions for a given cell may help indicate times
    of network load or reduced transmission power, and their effect on
    throughput/latency/loss.  However: as terminals are mobile, the
