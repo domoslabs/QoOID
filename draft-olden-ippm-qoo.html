@@ -1412,7 +1412,7 @@ The quality framework must be applicable in both lab testing and monitoring of p
 <p id="section-3-1">The foundation of the framework is Quality Attenuation <span>[<a href="#TR-452.1" class="cite xref">TR-452.1</a>]</span>. This work will not go into detail about how to measure Quality Attenuation, but some relevant techniques are:<a href="#section-3-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3-2.1">
-          <p id="section-3-2.1.1">Active probing with TWAMP Light / STAMP / IRTT<a href="#section-3-2.1.1" class="pilcrow">¶</a></p>
+          <p id="section-3-2.1.1">Active probing with TWAMP Light <span>[<a href="#RFC5357" class="cite xref">RFC5357</a>]</span> / STAMP <span>[<a href="#RFC8762" class="cite xref">RFC8762</a>]</span> / IRTT <span>[<a href="#IRTT" class="cite xref">IRTT</a>]</span><a href="#section-3-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-3-2.2">
           <p id="section-3-2.2.1">Varying Latency Under Load Tests<a href="#section-3-2.2.1" class="pilcrow">¶</a></p>
@@ -1433,8 +1433,8 @@ The quality framework must be applicable in both lab testing and monitoring of p
           <p id="section-3-2.7.1">Estimation<a href="#section-3-2.7.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-3-3">Quality Attenuation represents quality measurements as distributions. Using Latency distributions to measure network quality is nothing new and has been proposed by various researchers/practitioners. The novelty of the Quality Attenuation metric is to view packet loss as infinite (or too late to be of use e.g. &gt; 3 seconds) latency <span>[<a href="#TR-452.1" class="cite xref">TR-452.1</a>]</span>.<a href="#section-3-3" class="pilcrow">¶</a></p>
-<p id="section-3-4">Latency Distributions can be gathered via both passive monitoring and active testing. The active testing can use any type of IP traffic. It is OSI Layer and network technology independent, meaning it can be gathered in an end-user application, within some network equipment, or anywhere in between.<a href="#section-3-4" class="pilcrow">¶</a></p>
+<p id="section-3-3">Quality Attenuation represents quality measurements as distributions. Using Latency distributions to measure network quality is nothing new and has been proposed by various researchers/practitioners <span>[<a href="#Kelly" class="cite xref">Kelly</a>]</span><span>[<a href="#RFC8239" class="cite xref">RFC8239</a>]</span><span>[<a href="#RFC6049" class="cite xref">RFC6049</a>]</span>. The novelty of the Quality Attenuation metric is to view packet loss as infinite (or too late to be of use e.g. &gt; 3 seconds) latency <span>[<a href="#TR-452.1" class="cite xref">TR-452.1</a>]</span>.<a href="#section-3-3" class="pilcrow">¶</a></p>
+<p id="section-3-4">Latency Distributions can be gathered via both passive monitoring and active testing. The active testing can use any type of IP traffic, such as TCP, UDP, or QUIC. It is OSI Layer and network technology independent, meaning it can be gathered in an end-user application, within some network equipment, or anywhere in between.<a href="#section-3-4" class="pilcrow">¶</a></p>
 <p id="section-3-5">A key assumption behind the choice of latency distribution is that different applications and application categories fail at different points of the latency distribution. Some applications, typically downloads, have lenient latency requirements. Video Conferences typically are sensitive to high 90th percentile latency and to the difference between the 90th and the 99th percentile. Online gaming typically has a low tolerance for high 99th percentile latency. All applications require a minumum level of throughput and a maximum packet loss rate. A network quality metric that aims to generalize network quality must take the latency distribution, throughput, and packet loss into consideration.<a href="#section-3-5" class="pilcrow">¶</a></p>
 <p id="section-3-6">Two distributions can be composed using convolution <span>[<a href="#TR-452.1" class="cite xref">TR-452.1</a>]</span>.<a href="#section-3-6" class="pilcrow">¶</a></p>
 <div id="discussion-of-other-performance-metrics">
@@ -2037,6 +2037,18 @@ appear in all capitals, as shown here.<a href="#section-10-1" class="pilcrow">¶
         <dd>
 <span class="refTitle">"Mind Your Outcomes: The ΔQSD Paradigm for Quality-Centric Systems Development and Its Application to a Blockchain Case Study"</span>, <span>n.d.</span>, <span>&lt;<a href="https://www.mdpi.com/2073-431X/11/3/45">https://www.mdpi.com/2073-431X/11/3/45</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="IRTT">[IRTT]</dt>
+        <dd>
+<span class="refTitle">"Isochronous Round-Trip Tester"</span>, <span>n.d.</span>, <span>&lt;<a href="https://github.com/heistp/irtt">https://github.com/heistp/irtt</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="Kelly">[Kelly]</dt>
+        <dd>
+<span class="refAuthor">Kelly, F. P.</span>, <span class="refTitle">"Networks of Queues"</span>, <span>n.d.</span>, <span>&lt;<a href="https://www.cambridge.org/core/journals/advances-in-applied-probability/article/abs/networks-of-queues/38A1EA868A62B09C77A073BECA1A1B56">https://www.cambridge.org/core/journals/advances-in-applied-probability/article/abs/networks-of-queues/38A1EA868A62B09C77A073BECA1A1B56</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC5357">[RFC5357]</dt>
+        <dd>
+<span class="refAuthor">Hedayat, K.</span>, <span class="refAuthor">Krzanowski, R.</span>, <span class="refAuthor">Morton, A.</span>, <span class="refAuthor">Yum, K.</span>, and <span class="refAuthor">J. Babiarz</span>, <span class="refTitle">"A Two-Way Active Measurement Protocol (TWAMP)"</span>, <span class="seriesInfo">RFC 5357</span>, <span class="seriesInfo">DOI 10.17487/RFC5357</span>, <time datetime="2008-10" class="refDate">October 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5357">https://www.rfc-editor.org/rfc/rfc5357</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC5481">[RFC5481]</dt>
         <dd>
 <span class="refAuthor">Morton, A.</span> and <span class="refAuthor">B. Claise</span>, <span class="refTitle">"Packet Delay Variation Applicability Statement"</span>, <span class="seriesInfo">RFC 5481</span>, <span class="seriesInfo">DOI 10.17487/RFC5481</span>, <time datetime="2009-03" class="refDate">March 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5481">https://www.rfc-editor.org/rfc/rfc5481</a>&gt;</span>. </dd>
@@ -2052,6 +2064,14 @@ appear in all capitals, as shown here.<a href="#section-10-1" class="pilcrow">¶
 <dt id="RFC7942">[RFC7942]</dt>
         <dd>
 <span class="refAuthor">Sheffer, Y.</span> and <span class="refAuthor">A. Farrel</span>, <span class="refTitle">"Improving Awareness of Running Code: The Implementation Status Section"</span>, <span class="seriesInfo">BCP 205</span>, <span class="seriesInfo">RFC 7942</span>, <span class="seriesInfo">DOI 10.17487/RFC7942</span>, <time datetime="2016-07" class="refDate">July 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7942">https://www.rfc-editor.org/rfc/rfc7942</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8239">[RFC8239]</dt>
+        <dd>
+<span class="refAuthor">Avramov, L.</span> and <span class="refAuthor">J. Rapp</span>, <span class="refTitle">"Data Center Benchmarking Methodology"</span>, <span class="seriesInfo">RFC 8239</span>, <span class="seriesInfo">DOI 10.17487/RFC8239</span>, <time datetime="2017-08" class="refDate">August 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8239">https://www.rfc-editor.org/rfc/rfc8239</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8762">[RFC8762]</dt>
+        <dd>
+<span class="refAuthor">Mirsky, G.</span>, <span class="refAuthor">Jun, G.</span>, <span class="refAuthor">Nydell, H.</span>, and <span class="refAuthor">R. Foote</span>, <span class="refTitle">"Simple Two-Way Active Measurement Protocol"</span>, <span class="seriesInfo">RFC 8762</span>, <span class="seriesInfo">DOI 10.17487/RFC8762</span>, <time datetime="2020-03" class="refDate">March 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8762">https://www.rfc-editor.org/rfc/rfc8762</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9318">[RFC9318]</dt>
         <dd>
